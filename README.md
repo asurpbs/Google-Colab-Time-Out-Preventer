@@ -18,37 +18,6 @@ To use this repository, you need to have a Google account and access to Google C
 - To learn more about Google Colab, you can check out this [link](https://colab.research.google.com/notebooks/intro.ipynb).
 - To learn more about IPython, you can check out this [link](https://ipython.org/).
 - To learn more about google.colab, you can check out this [link](https://colab.research.google.com/notebooks/snippets/importing_libraries.ipynb).
-
-## Script :
-```
-#@title <b>Time Out Preventer (Advanced) </b></strong>
-%%capture
-AUTO_RECONNECT = True #@param {type:"boolean"}
-#@markdown **Run this code to prevent Google Colab from Timeout**
-from os import makedirs
-makedirs("/root/.config/rclone", exist_ok = True)
-if AUTO_RECONNECT:
-  import IPython
-  from google.colab import output
-
-  display(IPython.display.Javascript('''
-  function ClickConnect(){
-    btn = document.querySelector("colab-connect-button")
-    if (btn != null){
-      console.log("Click colab-connect-button"); 
-      btn.click() 
-      }
-    
-    btn = document.getElementById('ok')
-    if (btn != null){
-      console.log("Click reconnect"); 
-      btn.click() 
-      }
-    }
-    
-  setInterval(ClickConnect,60000)
-  '''))
-  ```
   
   
 ## Credits
